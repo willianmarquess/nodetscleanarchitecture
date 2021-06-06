@@ -4,6 +4,8 @@ import { ICreateUserUseCase } from './../../../useCases/user/createUser/interfac
 import { IUserController } from './../interface/IUserController';
 import { IUpdateUserUseCase } from '../../../useCases/user/updateUser/interfaces/IUpdateUserUseCase';
 import { IFindByIdUserUseCase } from '../../../useCases/user/findByIdUser/interface/IFindByIdUserUserCase';
+import { CreateUserDTO } from '../../../useCases/user/createUser/implementation/CreateUserDTO';
+import { UpdateUserDTO } from '../../../useCases/user/updateUser/implementation/UpdateUserDTO';
 
 export class UserController implements IUserController{
 
@@ -17,10 +19,10 @@ export class UserController implements IUserController{
         const { email, password} = request.body;
 
         try {
-            const user = await this.createUserUseCase.execute({email, password});
+            const user = await this.createUserUseCase.execute(new CreateUserDTO(email, password));
             return response.status(201).json(user); 
         } catch (error) {
-            return response.status(400).json({status: false, message: error.message || 'error'});
+            return response.status(500).json({status: false, message: error.message});
         }
     }
 
@@ -29,7 +31,7 @@ export class UserController implements IUserController{
             const users = await this.findAllUserUseCase.execute();
             return response.status(200).json(users); 
         } catch (error) {
-            return response.status(400).json({status: false, message: error.message || 'error'});
+            return response.status(500).json({status: false, message: error.message});
         }
     }
 
@@ -39,17 +41,17 @@ export class UserController implements IUserController{
             const user = await this.findByIdUserUseCase.execute(id);
             return response.status(200).json(user); 
         } catch (error) {
-            return response.status(400).json({status: false, message: error.message || 'error'});
+            return response.status(500).json({status: false, message: error.message});
         }
     }
 
     async update(request: Request, response: Response): Promise<Response> {
         const { id, email, password} = request.body;
         try {
-            const user = await this.updateUserUseCase.execute({id, email, password});
+            const user = await this.updateUserUseCase.execute(new UpdateUserDTO(id, email, password));
             return response.status(200).json(user); 
         } catch (error) {
-            return response.status(400).json({status: false, message: error.message || 'error'});
+            return response.status(500).json({status: false, message: error.message});
         }
     }
 
