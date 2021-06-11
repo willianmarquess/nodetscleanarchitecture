@@ -1,0 +1,23 @@
+version: '3'
+services:
+    nodets-docker:
+        build: .
+        command: node dist/src/server.js
+        ports: 
+            - 3000:3000
+        environment:
+            DB_CONTEXT: http://raven:8080
+            PORT: 3000
+        depends_on:
+            - raven
+        links: 
+            - raven
+    raven:
+        image: ravendb/ravendb
+        ports:
+            - "8080:8080"
+            - "38888:38888"
+        environment: 
+            - RAVEN_ARGS= --Setup.Mode=None --License.Eula.Accepted=true
+            - RAVEN_Security_UnsecuredAccessAllowed='PrivateNetwork'
+    
