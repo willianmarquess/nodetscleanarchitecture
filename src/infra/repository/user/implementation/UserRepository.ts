@@ -16,21 +16,18 @@ export class UserRepository implements IUserRepository{
     async findByEmail(email: string): Promise<User> {
         const session = this.storeContext.openSession();
         const user = await session.query(User).whereEquals("email", email).singleOrNull();
-        await session.saveChanges();
         return user;
     }
 
     async findById(id: string): Promise<User> {
         const session = this.storeContext.openSession();
         const user = await session.query(User).whereEquals("id", id).single();
-        await session.saveChanges();
         return user;
     }
 
     async findAll(): Promise<Array<User>> {
         const session = this.storeContext.openSession();
         const users = await session.query(User).all();
-        await session.saveChanges();
         return users;
     }
 
