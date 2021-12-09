@@ -21,7 +21,7 @@ export class UserRepository implements IUserRepository{
 
     async findById(id: string): Promise<User> {
         const session = this.storeContext.openSession();
-        const user = await session.query(User).whereEquals("id", id).single();
+        const user = await session.query(User).whereEquals("id", id).singleOrNull();
         return user;
     }
 

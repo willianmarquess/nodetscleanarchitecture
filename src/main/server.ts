@@ -2,7 +2,7 @@ import express from 'express';
 import { routesController } from './routes/routesController';
 import swaggerUI from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
-import {swaggerConfig} from './util/swagger-config';
+import {swaggerConfig} from '../util/swagger-config';
 import * as dotenv from 'dotenv';
 dotenv.config();  
 

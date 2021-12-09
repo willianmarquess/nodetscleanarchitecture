@@ -4,9 +4,7 @@ dotenv.config();
 
 export class RavenContext{
     static getContext(): IDocumentStore{
-        const store = new DocumentStore(process.env.DB_CONTEXT || 'http://localhost:8080', 'nodeapi');
+        const store = new DocumentStore(process.env.DB_CONTEXT, process.env.DB_NAME);
         return store.initialize();
     }
 }
-
-//http://live-test.ravendb.net

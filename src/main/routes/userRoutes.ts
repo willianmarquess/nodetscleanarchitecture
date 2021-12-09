@@ -1,5 +1,6 @@
+import { userControllerFactory } from './../factories/userControllerFactory';
 import { Router } from "express";
-import { userController } from "../application/controller/user/implementation";
+import { userController } from "../../application/controller/user/implementation";
 
 const userRoutes = Router();
 
@@ -58,7 +59,7 @@ const userRoutes = Router();
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.post('/user', (request, response) => {
-    return userController.create(request, response);
+    return userControllerFactory().create(request, response);
 });
 
 
@@ -77,7 +78,7 @@ userRoutes.post('/user', (request, response) => {
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.get('/user', (request, response) => {
-    return userController.findAll(request, response);
+    return userControllerFactory().findAll(request, response);
 });
 
 /**
@@ -102,7 +103,7 @@ userRoutes.get('/user', (request, response) => {
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.get('/user/:id', (request, response) => {
-    return userController.findById(request, response);
+    return userControllerFactory().findById(request, response);
 });
 
 /**
@@ -126,7 +127,7 @@ userRoutes.get('/user/:id', (request, response) => {
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.put('/user', (request, response) => {
-    return userController.update(request, response);
+    return userControllerFactory().update(request, response);
 });
 
 export {userRoutes}
