@@ -2,7 +2,7 @@ version: '3'
 services:
     nodets-docker:
         build: .
-        command: node dist/src/server.js
+        command: node
         ports: 
             - 3000:3000
         environment:

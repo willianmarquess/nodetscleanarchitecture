@@ -1,18 +1,20 @@
-export class UpdateUserDTO{
+import Validable from "../../../../../shared/validation/Validable";
+
+export class UpdateUserDTO extends Validable {
+     
      public id: string;
      public email: string;
      public password: string;
 
      constructor(id: string, email: string, password: string){
+          super();
           this.id = id;
           this.email = email;
           this.password = password;
-          this.validate();
+          this.isRequired(this.id, 'id', 'id is required');
+          this.isEmail(this.email, 'email', 'E-mail is invalid');
+          this.isLengthBetween(this.password, 6, 12, 'password', 
+          'the password must have the number of characters between 6 and 12');    
      }
 
-     validate(){
-          if(this.id == null || this.id == ""){ throw new Error("Invalid Id")}
-          if(this.email == null || this.email == ""){ throw new Error("Invalid Id")}
-          if(this.password.length < 8){ throw new Error("Password must be at least 8 characters")}
-     }
 }
