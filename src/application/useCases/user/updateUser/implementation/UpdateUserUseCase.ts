@@ -1,5 +1,5 @@
 import { UpdateUserDTO } from './UpdateUserDTO';
-import { IUserRepository } from './../../../../../infra/repository/user/interface/IUserRepository';
+import { IUserRepository } from '../../../../../infra/database/repository/user/interface/IUserRepository';
 import { IUpdateUserUseCase } from './../interfaces/IUpdateUserUseCase';
 import { User } from '../../../../../domain/User';
 import UserNotFoundError from '../../shared/errors/UserNotFound';

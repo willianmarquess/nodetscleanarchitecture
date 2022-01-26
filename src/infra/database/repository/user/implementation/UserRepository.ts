@@ -1,5 +1,5 @@
 import { IDocumentStore } from 'ravendb';
-import { User } from '../../../../domain/User';
+import { User } from '../../../../../domain/User';
 import { IUserRepository } from '../interface/IUserRepository';
 
 export class UserRepository implements IUserRepository{

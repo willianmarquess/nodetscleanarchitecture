@@ -1,7 +1,7 @@
-import { UserRepository } from './../../../../../infra/repository/user/implementation/UserRepository';
+import { UserRepository } from '../../../../../infra/database/repository/user/implementation/UserRepository';
 import { CreateUserDTO } from './CreateUserDTO';
 import { User } from '../../../../../domain/User';
-import { IUserRepository } from '../../../../../infra/repository/user/interface/IUserRepository';
+import { IUserRepository } from '../../../../../infra/database/repository/user/interface/IUserRepository';
 import { ICreateUserUseCase } from './../interfaces/ICreateUserUseCase';
 import UserAlreadyExistsError from '../errors/UserAlreadyExistsError';
 

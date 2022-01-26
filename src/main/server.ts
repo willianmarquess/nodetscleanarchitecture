@@ -4,8 +4,8 @@ import swaggerUI from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
 import {swaggerConfig} from '../util/swagger-config';
 import * as dotenv from 'dotenv';
-import RavenDBBootstrap from './infra/RavenDBBootstrap';
-import { ravenContext } from '../infra/repository/shared';
+import RavenDBBootstrap from '../infra/database/shared/RavenDBBootstrap';
+import { ravenContext } from '../infra/database/shared';
 dotenv.config();  
 
 const app = express();

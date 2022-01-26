@@ -1,5 +1,5 @@
 import { User } from "../../../../../domain/User";
-import { IUserRepository } from "../../../../../infra/repository/user/interface/IUserRepository";
+import { IUserRepository } from "../../../../../infra/database/repository/user/interface/IUserRepository";
 import { IFindByIdUserUseCase } from "../interface/IFindByIdUserUserCase";
 
 export class FindByIdUserUseCase implements IFindByIdUserUseCase {
