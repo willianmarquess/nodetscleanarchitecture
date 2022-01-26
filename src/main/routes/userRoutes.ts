@@ -1,5 +1,6 @@
-import { userControllerFactory } from './../factories/userControllerFactory';
+import { userControllerFactory } from '../factory/userControllerFactory';
 import { Router } from "express";
+import ExpressAdapter from '../adapter/ExpressAdapter';
 
 const userRoutes = Router();
 
@@ -26,7 +27,7 @@ const userRoutes = Router();
  *        example:
  *           id: d3951579-c132-449b-b5a2-e4c323de1162
  *           email: willian@willian.com
- *           password: 123
+ *           password: "123456789"
  * 
  */
   
@@ -58,7 +59,8 @@ const userRoutes = Router();
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.post('/user', (request, response) => {
-    return userControllerFactory().create(request, response);
+    const controller = userControllerFactory();
+    new ExpressAdapter(request, response).adapt(controller.create.bind(controller));
 });
 
 
@@ -77,7 +79,8 @@ userRoutes.post('/user', (request, response) => {
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.get('/user', (request, response) => {
-    return userControllerFactory().findAll(request, response);
+    const controller = userControllerFactory();
+    new ExpressAdapter(request, response).adapt(controller.findAll.bind(controller));
 });
 
 /**
@@ -102,7 +105,8 @@ userRoutes.get('/user', (request, response) => {
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.get('/user/:id', (request, response) => {
-    return userControllerFactory().findById(request, response);
+    const controller = userControllerFactory();
+    new ExpressAdapter(request, response).adapt(controller.findById.bind(controller));
 });
 
 /**
@@ -126,7 +130,8 @@ userRoutes.get('/user/:id', (request, response) => {
 *                $ref: '#/components/schemas/User'
 */
 userRoutes.put('/user', (request, response) => {
-    return userControllerFactory().update(request, response);
+    const controller = userControllerFactory();
+    new ExpressAdapter(request, response).adapt(controller.update.bind(controller));
 });
 
 export {userRoutes}

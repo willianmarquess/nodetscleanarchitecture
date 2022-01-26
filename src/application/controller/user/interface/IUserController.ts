@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
+import RequestDTO from "../../../../main/shared/http/RequestDTO";
+import ResponseDTO from "../../../../main/shared/http/ResponseDTO";
 
 export interface IUserController{
-     create(request: Request, response: Response): Promise<Response>
-     findAll(request: Request, response: Response): Promise<Response>
-     findById(request: Request, response: Response): Promise<Response>
-     update(request: Request, response: Response): Promise<Response>
+     create(request: RequestDTO): Promise<ResponseDTO>
+     findAll(request: RequestDTO): Promise<ResponseDTO>
+     findById(request: RequestDTO): Promise<ResponseDTO>
+     update(request: RequestDTO): Promise<ResponseDTO>
 }

@@ -1,4 +1,4 @@
-import Validable from "../../../../../shared/validation/Validable";
+import Validable from "../../../../../main/shared/validation/Validable";
 
 export class UpdateUserDTO extends Validable {
      
