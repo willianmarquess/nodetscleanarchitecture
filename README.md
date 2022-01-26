@@ -41,7 +41,8 @@ A ideia foi desenvolver uma API utilizando orientação a objetos, seguindo os c
 4. Camada (MAIN) a camada principal da aplicação, a camada mais externa, que contém outras subcamadas como: factories, routes e o entrypoint da aplicação: server.ts
 - Camada (FACTORIES) camada responsável por prover uma fábrica de objetos, no projeto temos uma fábrica da controller do user, onde a fábrica retorna uma instancia válida desse objeto, realizando todas as injeções de dependências.
 - Camada (ROUTES) camada responsável por criar as rotas HTTP da aplicação para comunicação externa.
-5. Camada (SHARED) camada de compartilhamento de recursos entre as camandas principais (DOMAIN, APPLICATION, e MAIN), que provê objetos de utilidade, como: validadores, objetos HTTP e erros específicos da aplicação.
+- Camada (ADAPTER) camada responsável por realizar a adaptação da aplicação com bibliotecas externas, no caso adaptação do express.
+- Camada (SHARED) camada de compartilhamento de recursos entre as camandas principais (DOMAIN, APPLICATION, e MAIN), que provê objetos de utilidade, como: validadores, objetos HTTP e erros específicos da aplicação.
 
 
 
