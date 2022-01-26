@@ -35,12 +35,12 @@ A ideia foi desenvolver uma API utilizando orientação a objetos, seguindo os c
 
 1. Camada (DOMAIN) - A camada central da aplicação (core), camada onde ficam as regras de negócio e lógica da aplicação, contém as regras que ira compor junto com outras regras de negócio a regra de aplicação na camada (APPLICATION)
 2. Camada (APPLICATION - a camada contém outras duas subcamadas, (CONTROLLER) e (USECASE), a camada de aplicação é responsável por organizar a composição de várias regras de negócio para atender a regra da aplicação.
-2.1. Camada (CONTROLLER) a camada mais externa da aplicação que se comunica diretamente com o adaptador, a controller recebe informações necessárias para a execução de um caso de uso, podendo ainda realizar uma primeira validação de dados e enviar os dados para o caso de uso realizar a regra da aplicação.
-2.2. Camada (USECASE) a camada use case recebe informações (ou não) das controllers e executa uma ação definida como (regra de aplicação) utilizando o domínio e chamadas ao banco de dados.
+- Camada (CONTROLLER) a camada mais externa da aplicação que se comunica diretamente com o adaptador, a controller recebe informações necessárias para a execução de um caso de uso, podendo ainda realizar uma primeira validação de dados e enviar os dados para o caso de uso realizar a regra da aplicação.
+- Camada (USECASE) a camada use case recebe informações (ou não) das controllers e executa uma ação definida como (regra de aplicação) utilizando o domínio e chamadas ao banco de dados.
 3. Camada (INFRA) a camada responsável por realizar chamadas a infraestrutura externa da aplicação (banco de dados, serviço de e-mail), contém uma classe que cria o contexto (conexão) com o banco de dados externo e prove uma camada abstraida para a utilização do banco de dados, utilizando o Pattern Repository.
 4. Camada (MAIN) a camada principal da aplicação, a camada mais externa, que contém outras subcamadas como: factories, routes e o entrypoint da aplicação: server.ts
-4.1. Camada (FACTORIES) camada responsável por prover uma fábrica de objetos, no projeto temos uma fábrica da controller do user, onde a fábrica retorna uma instancia válida desse objeto, realizando todas as injeções de dependências.
-4.2. Camada (ROUTES) camada responsável por criar as rotas HTTP da aplicação para comunicação externa.
+- Camada (FACTORIES) camada responsável por prover uma fábrica de objetos, no projeto temos uma fábrica da controller do user, onde a fábrica retorna uma instancia válida desse objeto, realizando todas as injeções de dependências.
+- Camada (ROUTES) camada responsável por criar as rotas HTTP da aplicação para comunicação externa.
 5. Camada (SHARED) camada de compartilhamento de recursos entre as camandas principais (DOMAIN, APPLICATION, e MAIN), que provê objetos de utilidade, como: validadores, objetos HTTP e erros específicos da aplicação.
 
 
