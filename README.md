@@ -18,4 +18,4 @@ Para executar o projeto siga os seguintes passos:
 
 ## Clean Architecture
 
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.cleancoder.com%2Funcle-bob%2F2012%2F08%2F13%2Fthe-clean-architecture.html&psig=AOvVaw2vVhx8K5QSfWFJrDTA4akb&ust=1643304606601000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCICfyez4z_UCFQAAAAAdAAAAABAD"></img>
+<img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg"></img>
