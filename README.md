@@ -16,6 +16,10 @@ Para executar o projeto siga os seguintes passos:
 1. rode o comando: docker-compose up -d
 2. acesse o swagger no endereço: http://localhost:3000
 
+## Motivação 	:thought_balloon:
+
 ## Clean Architecture
 
 <img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg"></img>
+
+## Entendendo as camadas do projeto
