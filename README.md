@@ -14,7 +14,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 Para executar o projeto siga os seguintes passos:
 1. rode o comando: docker-compose up -d
-2. acesse o swagger no endereço: http://localhost:3000
+2. acesse o swagger no endereço: http://localhost:3000/swagger/api
 
 ## Motivação 	:thought_balloon:
 
