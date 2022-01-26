@@ -1,17 +1,14 @@
 FROM node:alpine
 
-# Create app directory
 WORKDIR /usr/app
 
 COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY dist ./
 
-RUN npm run build
-
-COPY .env ./dist
+CMD ["node", "src/main/server.js"]
 
 EXPOSE 3000
 

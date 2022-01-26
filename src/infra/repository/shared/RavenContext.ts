@@ -4,7 +4,7 @@ dotenv.config();
 
 export class RavenContext{
     static getContext(): IDocumentStore{
-        const store = new DocumentStore(process.env.DB_CONTEXT, process.env.DB_NAME);
+        const store = new DocumentStore(`http://${process.env.DB_HOST}:${process.env.DB_PORT}`, process.env.DB_NAME);
         return store.initialize();
     }
 }

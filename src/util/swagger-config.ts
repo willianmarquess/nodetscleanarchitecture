@@ -6,13 +6,13 @@ const swaggerConfig = {
 			version: "1.0.0",
 			description: "A simple Express Library API",
 		},
-		servers: [
-			{
+		servers: [ 
+			{ 
 				url: "http://localhost:3000",
 			},
 		]
 	},
-	apis: ["./src/routes/*.ts"]
+	apis: [process.env.NODE_ENV === "dev" ? "./src/main/routes/*.ts" : "./src/main/routes/*.js"]
 }
 
 export {swaggerConfig};
