@@ -18,6 +18,15 @@ Para executar o projeto siga os seguintes passos:
 
 ## Motivação 	:thought_balloon:
 
+O projeto foi desenvolvido para fins didáticos, promovendo uma prática nos estudos sobre S.O.L.I.D e Clean Architecture utilizando a plataforma NodeJs com Typescript.
+A ideia foi desenvolver uma API utilizando orientação a objetos, seguindo os conceitos do S.O.L.I.D
+
+1. S (Princício da responsabilidade única) - Desenvolver classes e métodos que tenham somente um propósito.
+2. O (Princípio aberto fechado) - Desenvolver classes que possam estender comportamentos de outras classes sem modificar a classe pai.
+3. L (Princípio da substituição de Liskov) - Desenvolver classes pai que possam ser substituíveis por suas classes filhas.
+4. I (Princípio da Segregação de Interface) - Desenvolver interfaces específicas e buscando não utilizar interfaces genéricas.
+5. D (Princípio da Inversão de Dependencia) - Desenvolver as classes fazendo com que sempre dependam de abstrações e não de implementações.
+
 ## Clean Architecture
 
 <img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg"></img>
